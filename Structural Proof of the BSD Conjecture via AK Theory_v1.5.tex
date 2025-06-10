@@ -25,7 +25,6 @@ The key insight is a categorical–topological collapse equivalence:
 \]
 establishing a functorial correspondence between persistent homology, derived category vanishing, and the analytic rank of elliptic curves.  
 This constitutes a collapse-based structural framework validating BSD under AK-theoretic conditions.
-
 \end{abstract}
 
 \tableofcontents
@@ -58,12 +57,11 @@ The central thesis is that:
 
 We formalize this in the next sections.
 
-
 \section{Collapse Framework for the BSD Conjecture}
 
 We begin by mapping the arithmetic geometry of elliptic curves into the collapse logic of AK-HDPST. The main idea is to reframe each component of the BSD conjecture in terms of categorical obstructions and topological persistence.
 
-\subsection{Elliptic Curve and Rational Points}
+\subsection{3.1 Elliptic Curve and Rational Points}
 
 Let \( E/\mathbb{Q} \) be an elliptic curve. The set \( E(\mathbb{Q}) \) of rational points is finitely generated:
 \[
@@ -71,14 +69,14 @@ E(\mathbb{Q}) \cong \mathbb{Z}^r \oplus E(\mathbb{Q})_{\text{tors}},
 \]
 where \( r = \mathrm{rank}_\mathbb{Q}E \) is the Mordell–Weil rank.
 
-\subsection{Isomap Embedding and Persistent Homology}
+\subsection{3.2 Isomap Embedding and Persistent Homology}
 
 We construct an embedding of the orbit of rational points into a metric space \( X \subset \mathbb{R}^N \) using Isomap techniques:
 \[
 E(\mathbb{Q}) \hookrightarrow X \xrightarrow{\mathrm{Filtration}} \{ X_r \}_{r > 0} \xrightarrow{\mathrm{PH}} \mathrm{PH}_1(X).
 \]
 
-\subsection{Categorical Obstruction Class}
+\subsection{3.3 Categorical Obstruction Class}
 
 Let \( \mathcal{F}_E \in D^b(\mathsf{Motives}) \) be a derived motive associated to \( E \).  
 We consider the Ext-class:
@@ -87,7 +85,7 @@ We consider the Ext-class:
 \]
 which measures the obstruction to decomposing \( \mathcal{F}_E \) into local–global glueable parts.
 
-\subsection{Structural Collapse Equivalence}
+\subsection{3.4 Structural Collapse Equivalence}
 
 Our framework identifies the following equivalence:
 \[
@@ -95,7 +93,6 @@ Our framework identifies the following equivalence:
 \]
 
 This structural collapse implies that the rank of \( E(\mathbb{Q}) \) matches the order of vanishing of \( L(E,s) \) at \( s=1 \).
-
 
 \section{Main Theorem}
 
@@ -131,36 +128,39 @@ Let \( E/\mathbb{Q} \) be an elliptic curve.
 If \( \mathrm{Ext}^1(\mathcal{F}_E, \mathbb{Q}_\ell) = 0 \), then \( \Sha(E) = 0 \), i.e., the global–local matching is obstruction-free.
 \end{lemma}
 
-
 \section{Proof Sketch}
 
-\paragraph{Step 1.}
+\subsection{Step 1: Topological Collapse via Isomap Embedding}
 Embed the rational point set \( E(\mathbb{Q}) \) into a filtered metric space \( X \subset \mathbb{R}^N \) via Isomap, and compute persistent homology \( \mathrm{PH}_1(X) \).  
 Assume \( \mathrm{PH}_1(X) = 0 \).
 
-\paragraph{Step 2.}
-By the functorial collapse correspondence of AK-HDPST (see Appendix G–H), this implies:
+\subsection{Step 2: Categorical Collapse via AK-HDPST}
+By the functorial collapse correspondence of AK-HDPST \footnote{See Appendix G--H for formal justification}, this implies:
 \[
 \mathrm{Ext}^1(\mathcal{F}_E, \mathbb{Q}_\ell) = 0.
 \]
 
-\paragraph{Step 3.}
+\subsection{Step 3: Obstruction Vanishing and Selmer Triviality}
 By the obstruction-theoretic interpretation of \( \mathrm{Ext}^1 \), the vanishing implies that all local-to-global gluings succeed.  
-Thus, the Tate–Shafarevich group \( \Sha(E) \) must be trivial.
+Thus, the Tate--Shafarevich group \( \Sha(E) \) must be trivial.
 
-\paragraph{Step 4.}
+\subsection{Step 4: Arithmetic Realization of Rank Formula}
 With \( \Sha(E) = 0 \), the global points are fully detected analytically, implying:
 \[
 \mathrm{ord}_{s=1}L(E,s) = \mathrm{rank}_\mathbb{Q}E.
 \]
 
-\paragraph{Conclusion.}
-Hence, the BSD conjecture holds under the AK collapse hypothesis:
-\[
-\mathrm{PH}_1(E(\mathbb{Q})) = 0.
-\]
-\qed
-
+\subsection{Collapse Logic Flow Diagram}
+\begin{center}
+\begin{tikzcd}[row sep=large, column sep=huge]
+E(\mathbb{Q}) \arrow[r, "\text{Isomap}"] &
+X \subset \mathbb{R}^N \arrow[r, "\mathrm{PH}_1 = 0"] &
+\mathcal{E}_{\text{top}} = 0 \arrow[r, Rightarrow] &
+\mathrm{Ext}^1 = 0 \arrow[r, Rightarrow] &
+\Sha(E) = 0 \arrow[r, Rightarrow] &
+\mathrm{rank}_{\mathbb{Q}} E = \operatorname{ord}_{s=1} L(E, s)
+\end{tikzcd}
+\end{center}
 
 \section{Conclusion}
 \addcontentsline{toc}{section}{Conclusion}
