@@ -124,7 +124,7 @@ We welcome researchers in:
 
 ## 🌐 Japanese Version
 
-→ [日本語版はこちら（README_ja.md）](https://github.com/Kobayashi2501/bsd-collapse-proof-ak-theory/blob/main/README_ja.md)
+→ [日本語版はこちら（README_ja.md）](https://github.com/Kobayashi2501/Structural-Proof-of-the-BSD-Conjecture-via-AK-Theory/blob/main/README_jp.md)
 
 ---
 
