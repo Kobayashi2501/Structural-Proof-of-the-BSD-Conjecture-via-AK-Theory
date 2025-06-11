@@ -70,19 +70,20 @@ Each implication is proven using category-theoretic or topological methods detai
 
 ---
 
-## 🔬 Computational Modules
+## 🔬 Computational Modules and Formal Artifacts
 
 | File | Description |
 |------|-------------|
-| `ph_isomap.py` | Computes persistent homology of Isomap embedding for rational points |
-| `fourier_decay.py` | (For reference) Spectral decay estimation for dynamic fields |
-| `ak_projection_lemma_proofs_en_v7.3.tex` | Formal proof of AK projection lemma and functorial collapse |
+| `Structural Proof of the BSD Conjecture via AK Theory_v1.5.tex` | Full LaTeX source of the BSD collapse proof |
+| `Structural Proof of the BSD Conjecture via AK Theory_v1.5.pdf` | Compiled PDF version with all Appendices A–Z |
+| [AK Projection Lemma & Collapse Theory (v7.3)](https://github.com/Kobayashi2501/AK-High-Dimensional-Projection-Structural-Theory) | Core theoretical framework supporting collapse logic |
 
 ### Observables:
 
 - **PH₁ barcodes**: \( \mathrm{PH}_1(E(\mathbb{Q})) = 0 \Rightarrow \) topological triviality
 - **Ext class**: \( \mathrm{Ext}^1 = 0 \Rightarrow \) no obstruction to descent
-- **Collapse detection**: via barcodes, diagrams, and cohomology vanishing
+- **Collapse detection**: via homological barcodes, Ext-calculations, and categorical gluing success
+
 
 ---
 
