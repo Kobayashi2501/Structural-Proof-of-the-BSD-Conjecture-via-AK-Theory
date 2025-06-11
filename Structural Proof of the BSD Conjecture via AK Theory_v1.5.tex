@@ -288,21 +288,35 @@ This generates loops in the Rips complex at intermediate filtration scales.
 
 \subsection*{B.3 Structural Diagram and Example}
 
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.65\textwidth]{ph_barcode_rank1.png}
-  \caption{Example barcode diagram of \( \mathrm{PH}_1 \) for a rank-1 elliptic curve orbit \( \{kP\} \).}
-\end{figure}
+\paragraph{Persistent Barcode (PH₁) Profile.}
+For the cyclic orbit \( \{kP\} \subset E(\mathbb{Q}) \), the persistent homology barcode diagram in dimension 1, \( \mathrm{PH}_1 \), exhibits:
+
+\begin{itemize}
+  \item One long bar (generator) corresponding to the loop induced by the additive group structure of \( E(\mathbb{Q}) \).
+  \item Several short bars indicating transient topological noise.
+\end{itemize}
+
+This pattern implies that:
+\[
+\mathrm{PH}_1(E(\mathbb{Q})) = 0 \quad \text{(after simplification or noise thresholding)}
+\]
+
+
 
 \[
-\begin{tikzcd}[row sep=large, column sep=huge]
-E(\mathbb{Q}) \arrow[r, "\text{Orbit}"] \arrow[dr, swap, "PH_1"] & 
-S_n \subset \mathbb{R}^2 \arrow[r, "VR_\epsilon"] &
-\text{Rips complex} \arrow[r, "\text{Barcode}"] &
-\mathrm{PH}_1(S_n) \\
-& \mathrm{rank}_{\mathbb{Q}} > 0 \arrow[urr, Rightarrow, swap, "H_1 \neq 0"]
+\begin{tikzcd}[row sep=large, column sep=large]
+E(\mathbb{Q}) \arrow[r, "\text{Orbit}"] \arrow[d, swap, "PH_1"] &
+S_n \subset \mathbb{R}^2 \arrow[d, "VR_\epsilon"] \\
+\mathrm{rank}_{\mathbb{Q}}> 0
+
+\arrow[r, Rightarrow, swap, "H_1 \neq 0"] &
+\text{Rips complex} 
+\arrow[r, "\text{Barcode}"] &
+\mathrm{PH}_1(S_n)
 \end{tikzcd}
 \]
+
+
 
 ---
 
@@ -540,7 +554,9 @@ Hence, vanishing Ext corresponds to vanishing persistent mass.
 \[
 \begin{tikzcd}[row sep=large, column sep=huge]
 \mathrm{PH}_1(X) = \{(b_i, d_i)\} \arrow[r, "\text{squared lifetime sum}"] &
-\mathcal{E}_{\text{top}}(X) \arrow[r, "\text{semantic equivalence}"] &
+\mathcal{E}_{\text{top}}(X) 
+
+\arrow[r, "\text{semantic equivalence}"] &
 \mathrm{Ext}^1 = 0 \arrow[r, Rightarrow] &
 \Sha(E) = 0
 \end{tikzcd}
@@ -850,7 +866,9 @@ Therefore, the analytic rank equals the algebraic rank.
 
 \[
 \begin{tikzcd}[row sep=large, column sep=huge]
-\mathrm{Ext}^1(F_E, \mathbb{Q}_\ell) = 0 \arrow[r, Leftrightarrow, "\text{Top collapse}"] \arrow[d, Rightarrow, "\phi_E"] & 
+\mathrm{Ext}^1(F_E, \mathbb{Q}_\ell) = 0 
+
+\arrow[r, Leftrightarrow, "\text{Top collapse}"] \arrow[d, Rightarrow, "\phi_E"] & 
 \mathrm{PH}_1(E(\mathbb{Q})) = 0 \arrow[d, Rightarrow] \\
 \Sha(E) = 0 \arrow[r, Rightarrow, "\text{BSD}"] & \operatorname{ord}_{s=1}L(E,s) = \mathrm{rank}_\mathbb{Q}E
 \end{tikzcd}
@@ -1054,7 +1072,9 @@ This result establishes **Axiom A2** from Appendix Z at the level of a formal du
 \[
 \begin{tikzcd}[row sep=large, column sep=huge]
 E(\mathbb{Q}) \arrow[r, "\text{Isomap}"] &
-X \subset \mathbb{R}^N \arrow[r, "\mathrm{PH}_1 = 0"] \arrow[d, "\mathcal{F}_X^\bullet"] &
+X \subset \mathbb{R}^N \arrow[r, "\mathrm{PH}_1 = 0"]
+
+\arrow[d, "\mathcal{F}_X^\bullet"] &
 \text{contractible} \arrow[d, Rightarrow] \\
 \mathcal{F}_X^\bullet \in D^b(\mathsf{Filt}) \arrow[r, Rightarrow] &
 \mathrm{Ext}^1 = 0 \arrow[r, Rightarrow] &
@@ -1340,7 +1360,9 @@ Since all torsion ambiguity (Ext, Selmer) has collapsed, the analytic rank equal
 
 \[
 \begin{tikzcd}[row sep=large, column sep=huge]
-\mathrm{PH}_1(E) = 0 \arrow[r, Rightarrow] & 
+\mathrm{PH}_1(E) = 0 
+
+\arrow[r, Rightarrow] & 
 \mathrm{Ext}^1 = 0 \arrow[r, Rightarrow] & 
 \Sha(E) = 0 \arrow[r, Rightarrow] & 
 \operatorname{ord}_{s=1} L(E,s) = \mathrm{rank}_\mathbb{Q} E
@@ -1399,7 +1421,9 @@ corresponds to a unification of these structures at the derived categorical leve
 \[
 \begin{tikzcd}[row sep=large, column sep=large]
 \mathrm{PH}_1 = 0 \arrow[r, Rightarrow] \arrow[d, "\text{Mirror collapse}"'] &
-\mathrm{Ext}^1 = 0 \arrow[r, Rightarrow] \arrow[d, "\text{Langlands functor}"'] &
+\mathrm{Ext}^1 = 0 
+
+\arrow[r, Rightarrow] \arrow[d, "\text{Langlands functor}"'] &
 \Sha(E) = 0 \arrow[r, Rightarrow] &
 \mathrm{rank}_{\mathbb{Q}} E = \operatorname{ord}_{s=1} L(E,s) \\
 \text{SYZ degeneration} \arrow[r, Rightarrow] &
@@ -1930,6 +1954,7 @@ which in turn collapses \( \Sha(E)[\ell^\infty] \) to zero.
 \[
 \begin{tikzcd}[row sep=large, column sep=large]
 \mathrm{Ext}^1(\mathcal{F}_E, \mathbb{Q}_\ell) \arrow[r, "\text{Local Lift}"] \arrow[d, swap, "\text{Collapse}"] &
+
 \prod_v \mathrm{Ext}^1(\mathcal{F}_{E,v}, \mathbb{Q}_\ell) \\
 \mathrm{Sel}_\ell(E) \arrow[r, two heads] & \Sha(E)[\ell^\infty] \arrow[r] & 0
 \end{tikzcd}
@@ -1975,6 +2000,7 @@ as a persistent–categorical–arithmetic collapse diagram:
 \[
 \begin{tikzcd}[row sep=large, column sep=large]
 E(\mathbb{Q}) \subset \mathbb{R}^N \arrow[r, "\text{Isomap}"] \arrow[d, swap, "\text{Topological barcode}"] &
+
 X := \mathrm{Fil}(E) \arrow[r, "\text{PH}_1 computation}"] &
 \mathrm{PH}_1(X) = 0 \arrow[d, Rightarrow] \\
 \text{Topological triviality} \arrow[r, Rightarrow] &
@@ -2163,7 +2189,9 @@ of all obstruction-theoretic manifestations.
 \begin{tikzcd}[row sep=large, column sep=huge]
 E(\mathbb{Q}) \arrow[r, "\text{Isomap}"] &
 X \subset \mathbb{R}^N \arrow[r, "\mathrm{PH}_1 = 0"] &
-\mathcal{E}_{\text{top}} = 0 \arrow[r, Rightarrow] &
+\mathcal{E}_{\text{top}} = 0 
+
+\arrow[r, Rightarrow] &
 \mathrm{Ext}^1 = 0 \arrow[r, Rightarrow] &
 \Sha(E) = 0 \arrow[r, Rightarrow] &
 \mathrm{rank}_{\mathbb{Q}} E = \operatorname{ord}_{s=1} L(E, s)
@@ -2235,22 +2263,28 @@ This provides a clear map of which implications are:
 - Structurally enforced (B),
 - Formally proven or fully encoded (A/A+).
 
-\begin{table}[H]
-\centering
-\begin{tabular}{lll}
+\renewcommand{\arraystretch}{1.3}
+
+\begin{center}
+\begin{tabular}{p{3.5cm} p{5.5cm} p{5.0cm}}
 \toprule
 \textbf{Component} & \textbf{Collapse Condition} & \textbf{Proof Status} \\
 \midrule
-Topological        & \( \mathrm{PH}_1 = 0 \)              & Empirical + Structural (S) \\
-Categorical        & \( \mathrm{Ext}^1 = 0 \)             & Formal Lemma (A) \quad (Appendix C.8) \\
-Arithmetic         & \( \Sha(E) = 0 \)                    & Formal Lemma (A) \quad (Appendix D.4) \\
-Analytic Rank      & \( \operatorname{ord}_{s=1} L(E,s) = \mathrm{rank}_\mathbb{Q}E \) & Structure Only (B) \\
-Collapse Chain     & \( \mathrm{PH}_1 \Leftrightarrow \mathrm{Ext}^1 \Rightarrow \Sha \Rightarrow \text{Rank} \) & Integrated Collapse Logic (A+) \\
-Type-Theoretic     & Collapse via \( \Pi/\Sigma \) Encoding & Formally Described (B+) \quad (Appendix Z.9) \\
+Topological & \( \mathrm{PH}_1 = 0 \) & Empirical + Structural (S) \\
+Categorical & \( \mathrm{Ext}^1 = 0 \) & Formal Lemma (A) \\ (Appendix C.8) \\
+Arithmetic & \( \Sha(E) = 0 \) & Formal Lemma (A) \\ (Appendix D.4) \\
+Analytic Rank & \( \operatorname{ord}_{s=1} L(E,s) = \mathrm{rank}_\mathbb{Q} E \) & Structure Only (B) \\
+Collapse Chain & \( \mathrm{PH}_1 \Leftrightarrow \mathrm{Ext}^1 \Rightarrow \Sha \Rightarrow \text{Rank} \) & Integrated Collapse Logic (A+) \\
+Type-Theoretic & Collapse via \( \Pi/\Sigma \) Encoding & Formally Described (B+) \\ (Appendix Z.9) \\
 \bottomrule
 \end{tabular}
-\caption{Proof maturity levels of collapse components in the BSD structural framework.}
-\end{table}
+
+\vspace{0.5em}
+\textbf{Table.} Proof maturity levels of collapse components in the BSD structural framework.
+\end{center}
+
+
+
 
 \begin{remark}
 This classification clarifies the current status of formalization across the AK–BSD structure.  
@@ -2269,11 +2303,12 @@ to its corresponding appendix and proof mechanism.
 \textbf{Axiom} & \textbf{Statement and Reference} \\
 \hline
 \textbf{A1} & High-dimensional projection preserves MECE decomposition of rational orbit \quad [Appendix C] \\
-\textbf{A2} & Persistent homology collapse \( \mathrm{PH}_1 = 0 \) \( \Longleftrightarrow \) Ext-class vanishing \( \mathrm{Ext}^1 = 0 \) \quad [Appendix B$^+$, G.5, G.7, Y] \\
+\textbf{A2} & \parbox[t]{10cm}{Persistent homology collapse \( \mathrm{PH}_1 = 0 \) \( \Longleftrightarrow \) Ext-class vanishing \( \mathrm{Ext}^1 = 0 \) \\ \hfill [Appendix B$^+$, G.5, G.7, Y]} \\
 \textbf{A3} & \( \mathrm{Ext}^1 = 0 \) implies \( \Sha(E) = 0 \) (no global descent obstruction) \quad [Appendix H.4, Y] \\
 \textbf{A4} & \( \Sha(E) = 0 \) implies BSD identity: \( \operatorname{ord}_{s=1} L(E,s) = \operatorname{rank}_\mathbb{Q} E \) \quad [Appendix I, Y] \\
 \textbf{A5} & Langlands modularity ensures compatibility of PH–Ext–L-function data \quad [Appendix D] \\
 \end{tabular}
+
 
 ---
 
@@ -2466,31 +2501,33 @@ Qed.
 This demonstrates that the AK collapse structure  
 can be expressed and verified as a dependent-type equivalence in formal proof assistants.
 
-
-
-
 \subsection*{Z.10 Collapse Axioms and Constructive Correspondence Map}
 
 We provide a structural correspondence between each foundational axiom  
 of the BSD Collapse framework and its formal realization across steps and appendices.
 
-\begin{table}[H]
-\centering
-\begin{tabular}{llll}
+\renewcommand{\arraystretch}{1.3}
+
+\begin{center}
+\begin{tabular}{p{1.5cm} p{4.8cm} p{4.5cm} p{3.5cm}}
 \toprule
 \textbf{Axiom} & \textbf{Statement} & \textbf{Justification} & \textbf{Reference} \\
 \midrule
 A1 & High-dimensional projection enables MECE decomposition & AK projection structure & Appendix A, Step 0 \\
-A2 & \( \mathrm{PH}_1 = 0 \Rightarrow \text{local triviality} \) & Isomap + PH collapse & Appendix B, B⁺, Step 1 \\
-A3 & \( \mathrm{Ext}^1 = 0 \Rightarrow \text{gluing success} \) & Categorical obstruction vanishing & Appendix C.8, G, Step 2 \\
+A2 & \( \mathrm{PH}_1 = 0 \Rightarrow \) local triviality & Isomap + PH collapse & Appendix B, B⁺, Step 1 \\
+A3 & \( \mathrm{Ext}^1 = 0 \Rightarrow \) gluing success & Categorical obstruction vanishing & Appendix C.8, G, Step 2 \\
 A4 & \( \mathrm{Ext}^1 = 0 \Rightarrow \Sha = 0 \) & Arithmetic sheaf cohomology & Appendix D.4, H, Step 3 \\
-A5 & \( \Sha = 0 \Rightarrow \text{rank detectability} \) & BSD analytic structure & Appendix I, Step 4 \\
+A5 & \( \Sha = 0 \Rightarrow \) rank detectability & BSD analytic structure & Appendix I, Step 4 \\
 A6 & Collapse chain is functorial across levels & PH–Ext–Sha–Rank integration & Appendix Y, Z.8 \\
-A7 & Collapse is semantically trivial ⇒ true & Type-theoretic formalization & Appendix Z.9 \\
+A7 & Semantic collapse is type-theoretically trivial & Type-theoretic formalization & Appendix Z.9 \\
 \bottomrule
 \end{tabular}
-\caption{Collapse axioms and their formal realization across the BSD proof structure.}
-\end{table}
+
+\vspace{0.5em}
+\textbf{Table.} Collapse axioms and their formal realization across the BSD proof structure.
+\end{center}
+
+
 
 \begin{remark}
 This correspondence table ensures traceability from axiomatic declarations  
