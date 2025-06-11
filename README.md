@@ -131,4 +131,3 @@ We welcome researchers in:
 ## 📘 License
 
 Licensed under the [MIT License](https://opensource.org/licenses/MIT)
-# Structural-Proof-of-the-BSD-Conjecture-via-AK-Theory
