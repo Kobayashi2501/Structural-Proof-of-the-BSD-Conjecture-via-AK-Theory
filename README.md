@@ -76,7 +76,7 @@ Each implication is proven using category-theoretic or topological methods detai
 |------|-------------|
 | `Structural Proof of the BSD Conjecture via AK Theory_v1.5.tex` | Full LaTeX source of the BSD collapse proof |
 | `Structural Proof of the BSD Conjecture via AK Theory_v1.5.pdf` | Compiled PDF version with all Appendices A–Z |
-| [AK Projection Lemma & Collapse Theory (v7.3)](https://github.com/Kobayashi2501/AK-High-Dimensional-Projection-Structural-Theory) | Core theoretical framework supporting collapse logic |
+| [AK Projection Lemma & Collapse Theory ](https://github.com/Kobayashi2501/AK-High-Dimensional-Projection-Structural-Theory) | Core theoretical framework supporting collapse logic |
 
 ### Observables:
 
