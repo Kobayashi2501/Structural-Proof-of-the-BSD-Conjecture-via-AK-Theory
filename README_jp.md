@@ -124,9 +124,7 @@ Collapse構造による因果連鎖は以下の通りです：
 
 ## 🌐 英語版はこちら
 
-→ [English README](https://github.com/Kobayashi2501/bsd-collapse-proof-ak-theory/blob/main/README.md)
-
----
+→ [English README](https://github.com/Kobayashi2501/Structural-Proof-of-the-BSD-Conjecture-via-AK-Theory/blob/main/README.md)
 
 ## 📘 ライセンス
 
