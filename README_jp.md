@@ -78,7 +78,7 @@ Collapse構造による因果連鎖は以下の通りです：
 |------------|------|
 | `Structural Proof of the BSD Conjecture via AK Theory_v1.5.tex` | BSD Collapse構造の完全TeXソース |
 | `Structural Proof of the BSD Conjecture via AK Theory_v1.5.pdf` | コンパイル済みPDF（Appendix A～Z含む） |
-| [AK理論（Collapse基礎）v7.3](https://github.com/Kobayashi2501/AK-High-Dimensional-Projection-Structural-Theory) | Collapse理論の中核構造と圏論的基盤（外部GitHubリンク） |
+| [AK理論（Collapse基礎）](https://github.com/Kobayashi2501/AK-High-Dimensional-Projection-Structural-Theory) | Collapse理論の中核構造と圏論的基盤（外部GitHubリンク） |
 
 ### 観測量（概念的）
 
