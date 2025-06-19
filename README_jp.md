@@ -111,6 +111,22 @@ Collapse BSD 定理 v2.0 により、以下が形式的に完了：
 
 ---
 
+## 🧩 関連理論：AK 高次元射影構造理論（AK-HDPST）
+
+Collapse BSD 定理は、以下の一般構造理論に基づいています：
+
+**AK 高次元射影構造理論（AK-HDPST）**  
+→ [AK-HDPST GitHub リポジトリはこちら](https://github.com/Kobayashi2501/AK-High-Dimensional-Projection-Structural-Theory)
+
+この理論は以下を形式化しています：
+
+- トポロジカル Collapse 機構  
+- 関手的 Ext 消滅の連鎖  
+- ZFC および型理論による証明形式化  
+- Navier–Stokes／BSD／リーマン予想／Langlands の統一的構造対応
+
+---
+
 ## 📩 連絡先と協力のお願い
 
 以下の分野の研究者との共同を歓迎します：
