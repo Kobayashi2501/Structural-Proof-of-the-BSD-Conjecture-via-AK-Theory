@@ -12,10 +12,10 @@ This repository presents **Version 2.0** of a formal, categorical, and type-theo
 
 ## 🎯 Problem Statement
 
-Let $E/\mathbb{Q}$ be a non-singular elliptic curve.  
+Let _E/ℚ_ be a non-singular elliptic curve.  
 The BSD Conjecture states:
 
-$ \operatorname{ord}_{s=1} L(E, s) = \operatorname{rank}_\mathbb{Z} E(\mathbb{Q}) $
+**ord<sub>s=1</sub> L(E, s) = rank<sub>ℤ</sub> E(ℚ)**
 
 Our approach constructs a proof via a **collapse-theoretic chain of equivalences**, using topological triviality, Ext-vanishing, and analytic correspondence.
 
@@ -25,28 +25,31 @@ Our approach constructs a proof via a **collapse-theoretic chain of equivalences
 
 We build the chain:
 
-$ \mathrm{PH}_1(E) = 0 \Rightarrow \mathrm{Ext}^1(\mathbb{Q}, E[n]) = 0 \Rightarrow \operatorname{ord}_{s=1} L(E,s) = \operatorname{rank}_\mathbb{Z} E(\mathbb{Q}) $
+**PH₁(E) = 0 ⇒ Ext¹(ℚ, E[n]) = 0 ⇒ ord<sub>s=1</sub> L(E, s) = rank<sub>ℤ</sub> E(ℚ)**
 
 Each step corresponds to:
 
-- **Topological triviality**: barcode collapse of persistent homology
-- **Cohomological vanishing**: disappearance of obstruction class $\mathrm{Ext}^1$
+- **Topological triviality**: barcode collapse of persistent homology  
+- **Cohomological vanishing**: disappearance of obstruction class Ext¹  
 - **Zeta correspondence**: match of analytic and algebraic rank
 
 ---
 
 ## 🔧 Collapse Structure Summary
 
-The proof is encoded diagrammatically (in LaTeX):
+This structure reflects the functorial chain:
 
-PH₁(E) = 0 → Ext¹(Q,E[n]) = 0 → ord_{s=1} L(E,s) = rank_Z E(Q)
-↓ dim ↓ dim ↓
-r → r → rank_Z E(Q)
+PH₁(E) = 0
+↓ dim
+Ext¹(ℚ, E[n]) = 0
+↓ dim
+ord_{s=1} L(E, s) = rank_ℤ E(ℚ)
 
 
-This reflects the causal functorial structure:
-- $\mathcal{F}_{\mathrm{Collapse}}$: PH₁-to-Ext functor  
-- $\mathcal{C}_\zeta$: Ext-to-Zeta classifier
+Functors:
+
+- 𝔽<sub>Collapse</sub>: maps PH₁ → Ext¹  
+- ℂ<sub>ζ</sub>: maps Ext¹ → analytic rank
 
 ---
 
@@ -56,12 +59,12 @@ This reflects the causal functorial structure:
 |--------:|-------|---------|
 | 1 | BSD Overview | Defines BSD conjecture and outlines the collapse-based proof |
 | 2 | PH₁ Collapse | Topological triviality via Isomap embeddings |
-| 3 | Ext Collapse | Derives $\mathrm{Ext}^1 = 0$ from PH₁-vanishing |
+| 3 | Ext Collapse | Derives Ext¹ = 0 from PH₁-vanishing |
 | 4 | Zeta Collapse | Shows analytic rank matches algebraic rank |
-| 5 | Collapse Functor | Formalizes collapse maps $\mathcal{F}, \mathcal{C}_\zeta$ |
-| 6 | Type-Theoretic Encoding | Expresses the proof as $\Pi$/$\Sigma$ types |
-| 7 | QED | Final formal identity of BSD as proven |
-| 8 | Extensions | Future directions (motives, RH, Langlands) |
+| 5 | Collapse Functor | Formalizes collapse maps 𝔽<sub>Collapse</sub>, ℂ<sub>ζ</sub> |
+| 6 | Type-Theoretic Encoding | Expresses the proof as Π/Σ-type logic |
+| 7 | QED | Formal identity of BSD is declared proven |
+| 8 | Extensions | Toward motivic, RH, and Langlands collapses |
 
 ---
 
@@ -69,15 +72,15 @@ This reflects the causal functorial structure:
 
 | Appendix | Title | Content |
 |---------:|-------|---------|
-| A | Projection Embedding | Places $E(\mathbb{Q}) \subset \mathbb{R}^N$ |
+| A | Projection Embedding | Places E(ℚ) ⊂ ℝⁿ |
 | B | PH₁ Collapse Topology | Barcode theory and vanishing arguments |
 | C | Ext Correspondence | Cohomological interpretation of PH collapse |
-| D | Zeta Collapse Logic | Classifier between Ext and $L(E,s)$ |
+| D | Zeta Collapse Logic | Classifier between Ext and L(E,s) |
 | E | Collapse Functor Axioms | ZFC-consistent functor rules |
 | F | Type-Theoretic Collapse | Encoded via dependent types |
 | G | ZFC Foundations | Full logic model compatibility |
 | H | Collapse Index | Diagram and functor gallery |
-| I | Coq Snippet | Outline of machine-verifiable structure |
+| I | Coq Snippet | Machine-verifiable structure sketch |
 
 ---
 
@@ -85,22 +88,22 @@ This reflects the causal functorial structure:
 
 This version completes the structural proof of the BSD conjecture under:
 
-- PH₁ collapse
-- Ext¹ collapse
-- Rank equality via classifier
+- PH₁ collapse  
+- Ext¹ collapse  
+- Rank equality via classifier  
 - ZFC + type-theoretic consistency
 
-Thus, given the triviality of $\mathrm{PH}_1(E)$, BSD follows formally as:
+Thus, given the triviality of PH₁(E), BSD follows formally as:
 
-$ \mathrm{PH}_1 = 0 \Rightarrow \mathrm{Ext}^1 = 0 \Rightarrow \operatorname{rank} = \operatorname{ord} L $
+**PH₁ = 0 ⇒ Ext¹ = 0 ⇒ rank = ord L**
 
 ---
 
 ## 🔭 Future Extensions
 
-- Collapse structure for the **Riemann Hypothesis**
-- Structural proof of the **ABC Conjecture**
-- Motive-based Zeta correspondence
+- Collapse structure for the **Riemann Hypothesis**  
+- Structural proof of the **ABC Conjecture**  
+- Motive-based Zeta correspondence  
 - Langlands and Hilbert 12th modular flows
 
 ---
@@ -109,9 +112,9 @@ $ \mathrm{PH}_1 = 0 \Rightarrow \mathrm{Ext}^1 = 0 \Rightarrow \operatorname{ran
 
 Collaboration welcome from those in:
 
-- Algebraic geometry, number theory, cohomology
-- Type theory (Coq/Lean)
-- Topological data analysis
+- Algebraic geometry, number theory, cohomology  
+- Type theory (Coq/Lean)  
+- Topological data analysis  
 
 📧 [dollops2501@icloud.com](mailto:dollops2501@icloud.com)
 
@@ -119,7 +122,7 @@ Collaboration welcome from those in:
 
 ## 🌐 Japanese Version
 
-[日本語版はこちら（README_ja.md）](https://github.com/Kobayashi2501/Structural-Proof-of-the-BSD-Conjecture-via-AK-Theory/blob/main/README_jp.md)
+👉 [日本語版はこちら（README_ja.md）](https://github.com/Kobayashi2501/Structural-Proof-of-the-BSD-Conjecture-via-AK-Theory/blob/main/README_jp.md)
 
 ---
 
