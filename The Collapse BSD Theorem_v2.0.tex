@@ -507,13 +507,16 @@ By equivalence of analytic and homological structures in the AK formalism, the r
 We summarize the overall inference structure via the following commutative diagram:
 
 \[
-\begin{tikzcd}[row sep=large, column sep=large]
+\resizebox{\textwidth}{!}{%
+\begin{tikzcd}
 \PH_1(E) \arrow[r, "\mathcal{F}_{\mathrm{Collapse}}"] \arrow[d, "\dim"]
 & \Ext^1(\QQ,E[n]) \arrow[d, "\dim"] \arrow[r, "\mathcal{C}_{\zeta}"]
 & \mathrm{ord}_{s=1} L(E,s) \arrow[d, equal] \\
 r \arrow[r, equal] & r \arrow[r, equal] & \mathrm{rank}_{\ZZ} E(\QQ)
-\end{tikzcd}
+\end{tikzcd}%
+}
 \]
+
 
 This diagram encodes the collapse inference pathway:
 - $\PH_1$ dimension induces Ext-dimension,
@@ -575,12 +578,14 @@ which satisfies the following properties:
 The functor $\mathcal{F}_{\mathrm{Collapse}}$ enables the construction of the following causal diagram:
 
 \[
-\begin{tikzcd}[row sep=large, column sep=large]
-u(t) \arrow[r, "\text{Spectral Decay}"] \arrow[d, swap, "\text{Topological Energy}"]
+\resizebox{\textwidth}{!}{%
+\begin{tikzcd}
+u(t) \arrow[r, "\text{Spectral Decay}"] \arrow[ "\text{Topological Energy}"]
 & \PH_1(E) = 0 \arrow[d, "\mathcal{F}_{\mathrm{Collapse}}"] \\
 \Ext^1(\QQ,E[n]) = 0 \arrow[r, "\mathcal{C}_\zeta"]
 & \mathrm{ord}_{s=1} L(E,s) = \mathrm{rank}_{\ZZ} E(\QQ)
-\end{tikzcd}
+\end{tikzcd}%
+}
 \]
 
 Each edge of the diagram represents a formal implication:
@@ -766,12 +771,14 @@ This theorem asserts that the algebraic rank of rational points on $E$ is struct
 We recall the functorial causal chain, now reinterpreted as a formal commutative square:
 
 \[
-\begin{tikzcd}[row sep=large, column sep=large]
-u(t) \arrow[r, "\text{Spectral Decay}"] \arrow[d, swap, "\text{Topological Energy}"]
+\resizebox{\textwidth}{!}{%
+\begin{tikzcd}
+u(t) \arrow[r, "\text{Spectral Decay}"] \arrow["\text{Topological Energy}"]
 & \PH_1(E) = 0 \arrow[d, "\mathcal{F}_{\mathrm{Collapse}}"] \\
 \Ext^1(\QQ,E[n]) = 0 \arrow[r, "\mathcal{C}_{\zeta}"]
 & \mathrm{rank}_{\ZZ} E(\QQ) = \mathrm{ord}_{s=1} L(E,s)
-\end{tikzcd}
+\end{tikzcd}%
+}
 \]
 
 Each horizontal and vertical arrow is a formally defined functorial map:
@@ -1322,11 +1329,13 @@ These examples validate the interpretation of analytic singularity via categoric
 We summarize the Zeta inference structure with the following commutative diagram:
 
 \[
-\begin{tikzcd}[row sep=large, column sep=large]
-\PH_1(E) = 0 \arrow[r, "\mathcal{F}_{\mathrm{Collapse}}"] \arrow[dr, swap, bend right=10, "\text{Trivial Barcode}"]
+\resizebox{\textwidth}{!}{%
+\begin{tikzcd}
+\PH_1(E) = 0 \arrow[r, "\mathcal{F}_{\mathrm{Collapse}}"] \arrow[ "\text{Trivial Barcode}"]
 & \Ext^1(\QQ,E[n]) \arrow[d, "\mathcal{C}_\zeta"] \\
 & \mathrm{ord}_{s=1} L(E,s) = \mathrm{rank}_{\ZZ} E(\QQ)
-\end{tikzcd}
+\end{tikzcd}%
+}
 \]
 
 This triangle closes the analytic component of the BSD inference under the AK Collapse framework.
@@ -1388,13 +1397,16 @@ This confirms that $\mathcal{F}_{\mathrm{Collapse}}$ is a true functor in the ca
 We visualize the causal propagation from persistent homology to rank via the following commutative square:
 
 \[
-\begin{tikzcd}[row sep=large, column sep=large]
+\resizebox{\textwidth}{!}{%
+\begin{tikzcd}
 \PH_1(E) \arrow[r, "\mathcal{F}_{\mathrm{Collapse}}"] \arrow[d, "\dim"]
 & \Ext^1(\QQ,E[n]) \arrow[d, "\dim"] \arrow[r, "\mathcal{C}_\zeta"]
 & \mathrm{ord}_{s=1} L(E,s) \arrow[d, equal] \\
 r \arrow[r, equal] & r \arrow[r, equal] & \mathrm{rank}_{\ZZ} E(\QQ)
-\end{tikzcd}
+\end{tikzcd}%
+}
 \]
+
 
 Each functorial map preserves structure:
 - $\mathcal{F}_{\mathrm{Collapse}}$ maps barcodes to extension classes,
@@ -1420,8 +1432,8 @@ This composition preserves functoriality and coherence under structure-preservin
 We visualize the persistence-barcode-induced collapse as a triangle:
 
 \[
-\begin{tikzcd}[row sep=large, column sep=large]
-\PH_1(E) = 0 \arrow[rr, "\mathcal{F}_{\mathrm{Collapse}}"] \arrow[dr, swap, "\text{Finite Barcode}"]
+\begin{tikzcd}
+\PH_1(E) = 0 \arrow[rr, "\mathcal{F}_{\mathrm{Collapse}}"] \arrow[ "\text{Finite Barcode}"]
 & & \Ext^1(\QQ,E[n]) = 0 \arrow[dl, "\mathcal{C}_\zeta"] \\
 & \mathrm{ord}_{s=1} L(E,s) = \mathrm{rank}(E) &
 \end{tikzcd}
@@ -1641,12 +1653,14 @@ Thus, the analytic and algebraic ranks coincide under the collapse hypothesis.
 We reassert the causal inference via the commutative diagram:
 
 \[
-\begin{tikzcd}[row sep=large, column sep=large]
+\resizebox{\textwidth}{!}{%
+\begin{tikzcd}
 \PH_1(E) = 0 \arrow[r, "\mathcal{F}_{\mathrm{Collapse}}"] \arrow[d, "\dim"]
 & \Ext^1(\QQ,E[n]) = 0 \arrow[d, "\dim"] \arrow[r, "\mathcal{C}_{\zeta}"]
 & \mathrm{ord}_{s=1} L(E,s) \arrow[d, equal] \\
 0 \arrow[r, equal] & 0 \arrow[r, equal] & \mathrm{rank}_{\ZZ} E(\QQ)
-\end{tikzcd}
+\end{tikzcd}%
+}
 \]
 
 \subsection*{G.5 Formal Soundness}
@@ -1730,20 +1744,22 @@ $\mathcal{C}_\zeta$ & Zeta Collapse Classifier \\
 \noindent \textbf{Collapse Inference Diagram (from Chapter~5 and Appendix~E):}
 
 \[
-\begin{tikzcd}[row sep=large, column sep=large]
+\resizebox{\textwidth}{!}{%
+\begin{tikzcd}
 \PH_1(E) = 0 \arrow[r, "\mathcal{F}_{\mathrm{Collapse}}"] \arrow[d, "\dim"]
 & \Ext^1(\QQ,E[n]) = 0 \arrow[d, "\dim"] \arrow[r, "\mathcal{C}_\zeta"]
 & \mathrm{ord}_{s=1} L(E,s) \arrow[d, equal] \\
 r \arrow[r, equal] & r \arrow[r, equal] & \mathrm{rank}_{\ZZ} E(\QQ)
-\end{tikzcd}
+\end{tikzcd}%
+}
 \]
 
 \vspace{1em}
 \noindent \textbf{Collapse Triangle of Causality (from Appendix~D):}
 
 \[
-\begin{tikzcd}[row sep=large, column sep=large]
-\PH_1(E) = 0 \arrow[rr, "\mathcal{F}_{\mathrm{Collapse}}"] \arrow[dr, swap, "\text{Finite Barcode}"]
+\begin{tikzcd}
+\PH_1(E) = 0 \arrow[rr, "\mathcal{F}_{\mathrm{Collapse}}"] \arrow[ "\text{Finite Barcode}"]
 & & \Ext^1(\QQ,E[n]) = 0 \arrow[dl, "\mathcal{C}_\zeta"] \\
 & \mathrm{ord}_{s=1} L(E,s) = \mathrm{rank}(E) &
 \end{tikzcd}
