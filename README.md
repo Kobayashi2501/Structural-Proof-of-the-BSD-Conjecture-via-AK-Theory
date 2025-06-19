@@ -15,7 +15,7 @@ This repository presents **Version 2.0** of a formal, categorical, and type-theo
 Let $E/\mathbb{Q}$ be a non-singular elliptic curve.  
 The BSD Conjecture states:
 
-**$\operatorname{ord}_{s=1} L(E, s) = \operatorname{rank}_\mathbb{Z} E(\mathbb{Q})$**
+$ \operatorname{ord}_{s=1} L(E, s) = \operatorname{rank}_\mathbb{Z} E(\mathbb{Q}) $
 
 Our approach constructs a proof via a **collapse-theoretic chain of equivalences**, using topological triviality, Ext-vanishing, and analytic correspondence.
 
@@ -25,7 +25,7 @@ Our approach constructs a proof via a **collapse-theoretic chain of equivalences
 
 We build the chain:
 
-**$\mathrm{PH}_1(E) = 0 \Rightarrow \mathrm{Ext}^1(\mathbb{Q}, E[n]) = 0 \Rightarrow \operatorname{ord}_{s=1} L(E,s) = \operatorname{rank}_\mathbb{Z} E(\mathbb{Q})$**
+$ \mathrm{PH}_1(E) = 0 \Rightarrow \mathrm{Ext}^1(\mathbb{Q}, E[n]) = 0 \Rightarrow \operatorname{ord}_{s=1} L(E,s) = \operatorname{rank}_\mathbb{Z} E(\mathbb{Q}) $
 
 Each step corresponds to:
 
@@ -92,7 +92,7 @@ This version completes the structural proof of the BSD conjecture under:
 
 Thus, given the triviality of $\mathrm{PH}_1(E)$, BSD follows formally as:
 
-**$\mathrm{PH}_1 = 0 \Rightarrow \mathrm{Ext}^1 = 0 \Rightarrow \operatorname{rank} = \operatorname{ord} L$**
+$ \mathrm{PH}_1 = 0 \Rightarrow \mathrm{Ext}^1 = 0 \Rightarrow \operatorname{rank} = \operatorname{ord} L $
 
 ---
 
