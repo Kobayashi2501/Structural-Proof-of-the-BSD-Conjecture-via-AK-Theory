@@ -108,6 +108,22 @@ Thus, given the triviality of PH₁(E), BSD follows formally as:
 
 ---
 
+## 🧩 Related Theory: AK High-Dimensional Projection (AK-HDPST)
+
+The Collapse BSD Theorem is built upon the general framework of:
+
+**AK High-Dimensional Projection Structural Theory**  
+→ [AK-HDPST GitHub Repository](https://github.com/Kobayashi2501/AK-High-Dimensional-Projection-Structural-Theory)
+
+This theory formalizes:
+
+- Topological collapse mechanisms
+- Functorial Ext-vanishing pipelines
+- ZFC and type-theoretic proof encoding
+- General applicability to Navier–Stokes, BSD, RH, and Langlands problems
+
+---
+
 ## 📩 Contact
 
 Collaboration welcome from those in:
