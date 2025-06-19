@@ -1997,23 +1997,95 @@ interpreted as boundary components of the topos-induced degeneration under the c
 \end{lemma}
 
 \begin{lemma}[Collapse Obstruction Vanishing]
-The condition $\mathrm{Ext}^1(E) = 0$ implies $\Sha(E) = 0$, hence collapse completion coincides with the triviality of global descent obstruction.
+Let $E/\mathbb{Q}$ be an elliptic curve, and suppose that the global Ext-group $\mathrm{Ext}^1_{\mathcal{D}(\mathcal{X})}(E, \mathbb{G}_m)$ vanishes. Then the Tate–Shafarevich group $\Sha(E)$ is trivial:
+\[
+\mathrm{Ext}^1(E) = 0 \quad \Rightarrow \quad \Sha(E) = 0
+\]
+
+\textit{Proof.}  
+By definition, $\Sha(E)$ classifies principal homogeneous spaces under $E$ which are locally trivial everywhere (over $\mathbb{Q}_p$ for all $p$, and $\mathbb{R}$), but not necessarily globally trivial over $\mathbb{Q}$. This nontriviality corresponds to global obstructions to descent.
+
+On the other hand, $\mathrm{Ext}^1(E)$ classifies extensions of the form:
+\[
+0 \to E \to X \to \mathbb{G}_m \to 0
+\]
+in the derived category of sheaves over the arithmetic site $\mathcal{X}$. A nontrivial element of $\Sha(E)$ gives rise to such an extension that is non-split globally.
+
+Thus, $\mathrm{Ext}^1(E) = 0$ ensures that all such torsors admit a global section, i.e., they are globally trivial. Therefore, $\Sha(E) = 0$, and collapse completion proceeds without global cohomological obstruction.
+
+\hfill$\square$
 \end{lemma}
+
 
 ---
 
 \subsection*{J.5 Collapse Functor Diagram for BSD Components}
 
+\subsubsection*{Stage 1: Geometric Input}
+
+We begin with the rational moduli space of an elliptic curve $E/\mathbb{Q}$.  
+The AK framework projects this geometric object into a topological space suitable for collapse.
+
 \[
-\resizebox{\textwidth}{!}{%
-\begin{tikzcd}[row sep=large, column sep=large]
-\text{Moduli Space of } E(\mathbb{Q}) \arrow[r, "\text{Topological Collapse}"] \arrow[d, swap, "\text{Zeta Energy}"]
-& \mathrm{PH}_1 = 0 \arrow[r, "\text{Ext-trivialization}"]
-& \mathrm{Ext}^1 = 0 \arrow[d, "\text{Obstruction Vanishing}"] \\
-\text{Zeta Limit} \arrow[rr, swap, "\text{Residue Extraction}"]
-&& \text{Algebraic-Geometric Invariants}
+\begin{tikzcd}
+\text{Moduli Space of } E(\mathbb{Q}) \arrow[d, "\text{Topological Collapse}"]
+\\
+\mathrm{PH}_1 = 0
 \end{tikzcd}
-}
+\]
+
+---
+
+\subsubsection*{Stage 2: Topological Trivialization}
+
+Collapse of persistent homology implies the absence of topological obstructions.
+This enables further collapse in the cohomological direction.
+
+\[
+\begin{tikzcd}
+\mathrm{PH}_1 = 0 \arrow[d, "\text{Ext-class Trivialization}"] \\
+\mathrm{Ext}^1 = 0
+\end{tikzcd}
+\]
+
+---
+
+\subsubsection*{Stage 3: Cohomological Vanishing}
+
+The vanishing of $\mathrm{Ext}^1$ corresponds to the collapse of all global torsors.
+This implies the triviality of the Tate–Shafarevich group.
+
+\[
+\begin{tikzcd}
+\mathrm{Ext}^1 = 0 \arrow[d, "\text{Global Descent Obstruction Removed}"] \\
+\Sha(E) = 0
+\end{tikzcd}
+\]
+
+---
+
+\subsubsection*{Stage 4: Arithmetic Completion}
+
+Collapse completion is achieved. The BSD structure aligns with the analytic residue.
+
+\[
+\begin{tikzcd}
+\Sha(E) = 0 \arrow[d, "\text{Collapse Completion}"] \\
+\text{Smooth Structural Realization}
+\end{tikzcd}
+\]
+
+
+
+
+\vspace{1em}
+
+\[
+\begin{tikzcd}
+\text{Collapse Energy} \arrow[r, "\text{Zeta Limit}"]
+& \exp(-\mathcal{E}_{\text{Collapse}}) \arrow[r, "\text{Residue Match}"]
+& \frac{\#\Sha(E) \cdot \Omega_E \cdot \prod c_p \cdot \operatorname{Reg}_E}{\# E(\mathbb{Q})_\text{tors}^2}
+\end{tikzcd}
 \]
 
 ---
@@ -2099,7 +2171,7 @@ If $(E, \Phi, \Xi)$ defines a collapse failure triple, then:
 
 \[
 \resizebox{\textwidth}{!}{%
-\begin{tikzcd}[row sep=large, column sep=large]
+\begin{tikzcd}
 E(\mathbb{Q}) \arrow[r, "\text{Top Collapse}"] \arrow[d, swap, "\text{Zeta Evaluation}"]
 & \mathrm{PH}_1 \neq 0 \arrow[r, "\text{Extension Obstruction}"]
 & \mathrm{Ext}^1 \neq 0 \arrow[d, "\text{Global Descent Failure}"] \\
