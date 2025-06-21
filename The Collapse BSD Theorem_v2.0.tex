@@ -1,49 +1,71 @@
-% ===========================
+% ===============================================
 % The Collapse BSD Theorem via Categorical Collapse
-% ===========================
+% ===============================================
 \documentclass[11pt]{article}
 
-% === Language and Encoding ===
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+% === Language and Font ===
+\usepackage[utf8]{inputenc}       % UTF-8 input
+\usepackage[T1]{fontenc}          % T1 font encoding
+\usepackage{fontspec}             % XeLaTeX font support
+\setmainfont{Times New Roman}     % Set main font
 
 % === Math and Symbols ===
-\usepackage{amsmath,amssymb,amsthm,amsfonts}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
 \usepackage{mathtools}
 \usepackage{mathrsfs}
-\usepackage{stmaryrd}  % for \llbracket etc.
-\usepackage{bm}        % bold math
+\usepackage{stmaryrd}             % For \llbracket etc.
+\usepackage{bm}                   % Bold math symbols
+\usepackage{changepage} 
+% === TikZ and Diagrams ===
 \usepackage{tikz}
-\usetikzlibrary{matrix, arrows.meta, calc, decorations.pathmorphing}
+\usepackage{tikz-cd}
+\usetikzlibrary{
+  cd, matrix, arrows.meta, decorations.pathmorphing, calc, positioning
+}
 
-% === Code, Listings, Diagrams ===
+% === Listings for Coq, Code etc. ===
 \usepackage{listings}
+\usepackage{xcolor}
+\usepackage{graphicx}             % For rotatebox, scalebox etc.
+
+\lstdefinelanguage{Coq}{
+  keywords={Definition,Theorem,Proof,Qed,Fixpoint,match,with,end,fun,let,in,forall,exists,Inductive,return,Type},
+  keywordstyle=\color{blue}\bfseries,
+  identifierstyle=\color{black},
+  comment=[l]{//},
+  commentstyle=\color{gray},
+  morecomment=[s]{(*}{*)},
+  string=[b]",
+  stringstyle=\color{red},
+}
+
 \lstset{
   language=Coq,
   basicstyle=\ttfamily\footnotesize,
   keywordstyle=\color{blue},
   commentstyle=\color{gray},
   breaklines=true,
+  breakindent=0pt,
+  columns=flexible,
+  keepspaces=true,
+  xleftmargin=1em,
+  framexrightmargin=1em,
   frame=single,
   captionpos=b
 }
 
-% === Graphics and Layout ===
-\usepackage{graphicx}
-\usepackage{xcolor}
+
+
+% === Geometry and Layout ===
 \usepackage{geometry}
 \geometry{margin=1in}
+\usepackage{placeins}             % \FloatBarrier support
 
 % === Hyperlinks ===
 \usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
 
-% === Title Metadata ===
-\title{The Collapse BSD Theorem \\ 
-\Large \textsc{Version 2.0} \\
-\small Based on the AK High-Dimensional Projection Structural Theory v10.0}
-\author{Atsushi Kobayashi \\ \small with ChatGPT Research Partner}
-\date{June 2025}
+% === Language Support ===
+\usepackage[english]{babel}       % Use English language (place last)
 
 % === Theorem Environments ===
 \newtheorem{theorem}{Theorem}[section]
@@ -53,6 +75,8 @@
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{example}[theorem]{Example}
+\newtheorem{axiom}{Axiom}[section]
+\newtheorem{conjecture}{Conjecture}[section]
 
 % === Math Operators ===
 \DeclareMathOperator{\Ext}{Ext}
@@ -84,16 +108,21 @@
 \newcommand{\into}{\hookrightarrow}
 \newcommand{\onto}{\twoheadrightarrow}
 \newcommand{\eps}{\varepsilon}
-\newcommand{\Sha}{\text{\textcyr{Sh}}}
+\newcommand{\Sha}{\mathcal{X}}
 
-% === Document Starts ===
+% === Document Metadata ===
+\title{The Collapse BSD Theorem \\ 
+\Large \textsc{Version 2.0} \\
+\small Based on the AK High-Dimensional Projection Structural Theory v10.0}
+\author{Atsushi Kobayashi \\ \small with ChatGPT Research Partner}
+\date{June 2025}
+
+% === Document Start ===
 \begin{document}
 
 \maketitle
 \tableofcontents
 \newpage
-
-
 
 % ===========================
 % Chapter 1: Introduction and Reframing the BSD Conjecture
@@ -507,16 +536,13 @@ By equivalence of analytic and homological structures in the AK formalism, the r
 We summarize the overall inference structure via the following commutative diagram:
 
 \[
-\resizebox{\textwidth}{!}{%
-\begin{tikzcd}
+\begin{tikzcd}[row sep=large, column sep=large]
 \PH_1(E) \arrow[r, "\mathcal{F}_{\mathrm{Collapse}}"] \arrow[d, "\dim"]
 & \Ext^1(\QQ,E[n]) \arrow[d, "\dim"] \arrow[r, "\mathcal{C}_{\zeta}"]
 & \mathrm{ord}_{s=1} L(E,s) \arrow[d, equal] \\
 r \arrow[r, equal] & r \arrow[r, equal] & \mathrm{rank}_{\ZZ} E(\QQ)
-\end{tikzcd}%
-}
+\end{tikzcd}
 \]
-
 
 This diagram encodes the collapse inference pathway:
 - $\PH_1$ dimension induces Ext-dimension,
@@ -578,15 +604,14 @@ which satisfies the following properties:
 The functor $\mathcal{F}_{\mathrm{Collapse}}$ enables the construction of the following causal diagram:
 
 \[
-\resizebox{\textwidth}{!}{%
-\begin{tikzcd}
-u(t) \arrow[r, "\text{Spectral Decay}"] \arrow[ "\text{Topological Energy}"]
+\begin{tikzcd}[row sep=large, column sep=large]
+u(t) \arrow[r, "\text{Spectral Decay}"] \arrow[d, "\text{Topological Energy}"']
 & \PH_1(E) = 0 \arrow[d, "\mathcal{F}_{\mathrm{Collapse}}"] \\
 \Ext^1(\QQ,E[n]) = 0 \arrow[r, "\mathcal{C}_\zeta"]
 & \mathrm{ord}_{s=1} L(E,s) = \mathrm{rank}_{\ZZ} E(\QQ)
-\end{tikzcd}%
-}
+\end{tikzcd}
 \]
+
 
 Each edge of the diagram represents a formal implication:
 - Horizontal: decay or classification at a given level (analytic or arithmetic),
@@ -771,15 +796,14 @@ This theorem asserts that the algebraic rank of rational points on $E$ is struct
 We recall the functorial causal chain, now reinterpreted as a formal commutative square:
 
 \[
-\resizebox{\textwidth}{!}{%
-\begin{tikzcd}
-u(t) \arrow[r, "\text{Spectral Decay}"] \arrow["\text{Topological Energy}"]
+\begin{tikzcd}[row sep=large, column sep=large]
+u(t) \arrow[r, "\text{Spectral Decay}"] \arrow[d, "\text{Topological Energy}"']
 & \PH_1(E) = 0 \arrow[d, "\mathcal{F}_{\mathrm{Collapse}}"] \\
 \Ext^1(\QQ,E[n]) = 0 \arrow[r, "\mathcal{C}_{\zeta}"]
 & \mathrm{rank}_{\ZZ} E(\QQ) = \mathrm{ord}_{s=1} L(E,s)
-\end{tikzcd}%
-}
+\end{tikzcd}
 \]
+
 
 Each horizontal and vertical arrow is a formally defined functorial map:
 - Topological to categorical simplification;
@@ -1329,14 +1353,18 @@ These examples validate the interpretation of analytic singularity via categoric
 We summarize the Zeta inference structure with the following commutative diagram:
 
 \[
-\resizebox{\textwidth}{!}{%
-\begin{tikzcd}
-\PH_1(E) = 0 \arrow[r, "\mathcal{F}_{\mathrm{Collapse}}"] \arrow[ "\text{Trivial Barcode}"]
-& \Ext^1(\QQ,E[n]) \arrow[d, "\mathcal{C}_\zeta"] \\
+\begin{tikzcd}[row sep=large, column sep=large]
+\PH_1(E) = 0
+  \arrow[r, "\mathcal{F}_{\mathrm{Collapse}}"]
+  \arrow[d, "\text{Trivial Barcode}"']
+& \Ext^1(\QQ,E[n])
+  \arrow[d, "\mathcal{C}_\zeta"] \\
+\text{(implicitly trivial class)}
+  \arrow[r, phantom, ""]
 & \mathrm{ord}_{s=1} L(E,s) = \mathrm{rank}_{\ZZ} E(\QQ)
-\end{tikzcd}%
-}
+\end{tikzcd}
 \]
+
 
 This triangle closes the analytic component of the BSD inference under the AK Collapse framework.
 
@@ -1397,14 +1425,12 @@ This confirms that $\mathcal{F}_{\mathrm{Collapse}}$ is a true functor in the ca
 We visualize the causal propagation from persistent homology to rank via the following commutative square:
 
 \[
-\resizebox{\textwidth}{!}{%
-\begin{tikzcd}
+\begin{tikzcd}[row sep=large, column sep=large]
 \PH_1(E) \arrow[r, "\mathcal{F}_{\mathrm{Collapse}}"] \arrow[d, "\dim"]
 & \Ext^1(\QQ,E[n]) \arrow[d, "\dim"] \arrow[r, "\mathcal{C}_\zeta"]
 & \mathrm{ord}_{s=1} L(E,s) \arrow[d, equal] \\
 r \arrow[r, equal] & r \arrow[r, equal] & \mathrm{rank}_{\ZZ} E(\QQ)
-\end{tikzcd}%
-}
+\end{tikzcd}
 \]
 
 
@@ -1653,15 +1679,14 @@ Thus, the analytic and algebraic ranks coincide under the collapse hypothesis.
 We reassert the causal inference via the commutative diagram:
 
 \[
-\resizebox{\textwidth}{!}{%
-\begin{tikzcd}
+\begin{tikzcd}[row sep=large, column sep=large]
 \PH_1(E) = 0 \arrow[r, "\mathcal{F}_{\mathrm{Collapse}}"] \arrow[d, "\dim"]
 & \Ext^1(\QQ,E[n]) = 0 \arrow[d, "\dim"] \arrow[r, "\mathcal{C}_{\zeta}"]
 & \mathrm{ord}_{s=1} L(E,s) \arrow[d, equal] \\
 0 \arrow[r, equal] & 0 \arrow[r, equal] & \mathrm{rank}_{\ZZ} E(\QQ)
-\end{tikzcd}%
-}
+\end{tikzcd}
 \]
+
 
 \subsection*{G.5 Formal Soundness}
 
@@ -1744,15 +1769,14 @@ $\mathcal{C}_\zeta$ & Zeta Collapse Classifier \\
 \noindent \textbf{Collapse Inference Diagram (from Chapter~5 and Appendix~E):}
 
 \[
-\resizebox{\textwidth}{!}{%
-\begin{tikzcd}
+\begin{tikzcd}[row sep=large, column sep=large]
 \PH_1(E) = 0 \arrow[r, "\mathcal{F}_{\mathrm{Collapse}}"] \arrow[d, "\dim"]
 & \Ext^1(\QQ,E[n]) = 0 \arrow[d, "\dim"] \arrow[r, "\mathcal{C}_\zeta"]
 & \mathrm{ord}_{s=1} L(E,s) \arrow[d, equal] \\
 r \arrow[r, equal] & r \arrow[r, equal] & \mathrm{rank}_{\ZZ} E(\QQ)
-\end{tikzcd}%
-}
+\end{tikzcd}
 \]
+
 
 \vspace{1em}
 \noindent \textbf{Collapse Triangle of Causality (from Appendix~D):}
@@ -2170,16 +2194,15 @@ If $(E, \Phi, \Xi)$ defines a collapse failure triple, then:
 \subsection*{K.4 Diagrammatic Interpretation of Collapse Failure}
 
 \[
-\resizebox{\textwidth}{!}{%
-\begin{tikzcd}
+\begin{tikzcd}[row sep=large, column sep=large]
 E(\mathbb{Q}) \arrow[r, "\text{Top Collapse}"] \arrow[d, swap, "\text{Zeta Evaluation}"]
 & \mathrm{PH}_1 \neq 0 \arrow[r, "\text{Extension Obstruction}"]
 & \mathrm{Ext}^1 \neq 0 \arrow[d, "\text{Global Descent Failure}"] \\
 L(E,s) \text{ residue} \arrow[rr, swap, "\text{Mismatch}"]
 && \text{Algebraic Rank} \neq \text{Analytic Order}
 \end{tikzcd}
-}
 \]
+
 
 This diagram formally illustrates how collapse failures cascade from topological to cohomological to analytic layers, leading to a violation of BSD identity.
 
