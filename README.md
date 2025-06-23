@@ -108,6 +108,14 @@ Thus, given the triviality of PH₁(E), BSD follows formally as:
 
 ---
 
+## DOI
+
+This project has been formally archived on Zenodo:
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15713893.svg)](https://doi.org/10.5281/zenodo.15713893)
+
+---
+
 ## 🧩 Related Theory: AK High-Dimensional Projection (AK-HDPST)
 
 The Collapse BSD Theorem is built upon the general framework of:
