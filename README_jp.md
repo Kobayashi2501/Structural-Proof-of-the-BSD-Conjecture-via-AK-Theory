@@ -111,6 +111,14 @@ Collapse BSD 定理 v2.0 により、以下が形式的に完了：
 
 ---
 
+## DOI
+
+このプロジェクトはZenodoに正式にアーカイブされています：
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15713893.svg)](https://doi.org/10.5281/zenodo.15713893)
+
+---
+
 ## 🧩 関連理論：AK 高次元射影構造理論（AK-HDPST）
 
 Collapse BSD 定理は、以下の一般構造理論に基づいています：
