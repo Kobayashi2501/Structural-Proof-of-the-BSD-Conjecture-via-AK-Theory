@@ -12,10 +12,12 @@ This repository presents **Version 3.0** of a fully formal, functorial, and type
 
 ## 🎯 Problem Statement
 
-Let _E/ℚ_ be a non-singular elliptic curve.  
+Let $E/\mathbb{Q}$ be a non-singular elliptic curve.  
 The BSD Conjecture states:
 
-$\operatorname{ord}_{s=1} L(E, s) = \operatorname{rank}_{\mathbb{Z}} E(\mathbb{Q})$
+$$
+\operatorname{ord}_{s=1} L(E, s) = \operatorname{rank}_{\mathbb{Z}} E(\mathbb{Q})
+$$
 
 We construct a formal proof via a collapse-theoretic chain of functorial implications.
 
@@ -23,7 +25,9 @@ We construct a formal proof via a collapse-theoretic chain of functorial implica
 
 ## 🧠 Core Collapse Chain
 
-$\mathrm{PH}_1(E) = 0 \Rightarrow \mathrm{Ext}^1(\mathbb{Q}, E[n]) = 0 \Rightarrow \operatorname{ord}_{s=1} L(E, s) = \operatorname{rank}_{\mathbb{Z}} E(\mathbb{Q})$
+$$
+\mathrm{PH}_1(E) = 0 \Rightarrow \mathrm{Ext}^1(\mathbb{Q}, E[n]) = 0 \Rightarrow \operatorname{ord}_{s=1} L(E, s) = \operatorname{rank}_{\mathbb{Z}} E(\mathbb{Q})
+$$
 
 - **Topological triviality**: persistent homology vanishes  
 - **Cohomological vanishing**: derived Galois obstructions disappear  
@@ -33,10 +37,11 @@ $\mathrm{PH}_1(E) = 0 \Rightarrow \mathrm{Ext}^1(\mathbb{Q}, E[n]) = 0 \Rightarr
 
 ## 🧩 Collapse Functors
 
-- $\mathcal{F}_{\mathrm{Collapse}}: \mathrm{PH}_1 \to \mathrm{Ext}^1$  
-- $\mathcal{C}_\zeta: \mathrm{Ext}^1 \to \operatorname{ord}_{s=1} L(E, s)$
+- $\mathcal{F}_{\mathrm{Collapse}}: \mathrm{PH}_1 \rightarrow \mathrm{Ext}^1$  
+- $\mathcal{C}_\zeta: \mathrm{Ext}^1 \rightarrow \operatorname{ord}_{s=1} L(E, s)$
 
 Each functor is defined constructively and is provably consistent with ZFC and dependent type theory.
+
 
 ---
 
