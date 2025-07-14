@@ -113,7 +113,7 @@ PH₁ = 0 ⇒ Ext¹ = 0 ⇒ rank = ord L
 
 This project is formally archived on Zenodo:
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15713893.svg)](https://doi.org/10.5281/zenodo.15713893)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15876651.svg)](https://doi.org/10.5281/zenodo.15876651)
 
 ---
 
