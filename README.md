@@ -1,4 +1,3 @@
-```markdown
 # 📉 The Collapse BSD Theorem (v3.0)
 ### Structural Proof of the Birch and Swinnerton-Dyer Conjecture  
 #### via Collapse Theory and AK High-Dimensional Projection
@@ -16,132 +15,110 @@ This repository presents **Version 3.0** of a fully formal, functorial, and type
 Let _E/ℚ_ be a non-singular elliptic curve.  
 The BSD Conjecture states:
 
-```math
-\operatorname{ord}_{s=1} L(E, s) = \operatorname{rank}_{\mathbb{Z}} E(\mathbb{Q})
-```
+$\operatorname{ord}_{s=1} L(E, s) = \operatorname{rank}_{\mathbb{Z}} E(\mathbb{Q})$
 
-Our approach constructs a formal proof via a **collapse-theoretic chain of functorial implications**, grounded in topological, cohomological, and analytic correspondences.
+We construct a formal proof via a collapse-theoretic chain of functorial implications.
 
 ---
 
 ## 🧠 Core Collapse Chain
 
-```math
-\mathrm{PH}_1(E) = 0 
-\;\Rightarrow\; 
-\mathrm{Ext}^1(\mathbb{Q}, E[n]) = 0 
-\;\Rightarrow\; 
-\operatorname{ord}_{s=1} L(E, s) = \operatorname{rank}_{\mathbb{Z}} E(\mathbb{Q})
-```
+$\mathrm{PH}_1(E) = 0 \Rightarrow \mathrm{Ext}^1(\mathbb{Q}, E[n]) = 0 \Rightarrow \operatorname{ord}_{s=1} L(E, s) = \operatorname{rank}_{\mathbb{Z}} E(\mathbb{Q})$
 
 - **Topological triviality**: persistent homology vanishes  
 - **Cohomological vanishing**: derived Galois obstructions disappear  
-- **Analytic identification**: analytic and algebraic rank match
+- **Analytic identification**: analytic and algebraic ranks match
 
 ---
 
 ## 🧩 Collapse Functors
 
-```math
-\mathcal{F}_{\mathrm{Collapse}}: \mathrm{PH}_1 \to \mathrm{Ext}^1
-\quad,\quad
-\mathcal{C}_\zeta: \mathrm{Ext}^1 \to \operatorname{ord}_{s=1} L(E, s)
-```
+- $\mathcal{F}_{\mathrm{Collapse}}: \mathrm{PH}_1 \to \mathrm{Ext}^1$  
+- $\mathcal{C}_\zeta: \mathrm{Ext}^1 \to \operatorname{ord}_{s=1} L(E, s)$
 
-Each functor is defined constructively and provably consistent with ZFC and dependent type theory.
+Each functor is defined constructively and is provably consistent with ZFC and dependent type theory.
 
 ---
 
 ## 📚 Proof Outline (Chapters 1–8)
 
 | Chapter | Title | Summary |
-|--------:|-------|---------|
-| 1 | BSD Overview | Classical BSD formula and its categorical reformulation |
-| 2 | PH₁ Collapse | Persistent homology vanishing from barcode filtration |
-| 3 | Ext Collapse | Triviality of $\mathrm{Ext}^1$ under topological collapse |
-| 4 | Zeta Collapse | Translation of Ext-dimension to analytic rank |
-| 5 | Collapse Functor | Definition and functorial rules of 𝔽<sub>Collapse</sub> |
-| 6 | Type-Theoretic Encoding | Coq/Lean-style proof with $\Pi$- and $\Sigma$-types |
-| 7 | Formal Proof | Constructive and ZFC-interpretable formal Q.E.D. |
-| 8 | Motivic Extensions | Pathways to RH, ABC, and Langlands Collapse |
+|--------:|:------|:--------|
+| 1 | BSD Overview | Classical BSD formula and categorical reformulation |
+| 2 | PH₁ Collapse | Barcode filtration and persistent homology vanishing |
+| 3 | Ext Collapse | Cohomological collapse from PH-vanishing |
+| 4 | Zeta Collapse | Translation from Ext-dimension to analytic rank |
+| 5 | Collapse Functor | Definition and rules of $\mathcal{F}_{\mathrm{Collapse}}$ |
+| 6 | Type-Theoretic Encoding | Coq/Lean-style $\Pi$- and $\Sigma$-type encoding |
+| 7 | Formal Proof | Structured logical derivation of BSD |
+| 8 | Motivic Extensions | Extensions to RH, ABC, Langlands |
 
 ---
 
-## 📑 Appendices A–K (Collapse Infrastructure)
+## 📑 Appendices A–K
 
-| Appendix | Topic | Content |
-|---------:|-------|---------|
-| A | Projection Embedding | Maps \( E(\mathbb{Q}) \subset \mathbb{R}^n \) via AK structure |
-| B | PH₁ Collapse | Homology filtration and barcode disappearance |
-| C | Ext Collapse | Selmer group as Ext-class and cohomological obstruction |
-| D | Zeta Collapse | Functorial classifier linking Ext and \( L(E, s) \) |
-| E | Collapse Functor | Category-theoretic foundation of collapse maps |
-| F | Type Semantics | Collapse encoding in dependent type theory |
-| G | Formal Q.E.D. | Fully structured and logical proof of BSD |
-| H | Index & Gallery | Collapse diagrams and term glossary |
-| I | Coq Proof | Machine-verifiable formal statement in Coq |
-| J | BSD Constants | Regulator, Tamagawa, and Sha as collapse-compatible |
-| K | Failure Modes | Formal classification of collapse obstruction cases |
+| Appendix | Title | Content |
+|---------:|:------|:--------|
+| A | Projection Embedding | AK projection $E(\mathbb{Q}) \subset \mathbb{R}^n$ |
+| B | PH₁ Collapse | Topological barcode and filtration |
+| C | Ext Collapse | Selmer group and extension classes |
+| D | Zeta Collapse | Analytic rank from Ext-class |
+| E | Collapse Functor | Functorial structure and axioms |
+| F | Type Semantics | Type theory + ZFC embedding |
+| G | Formal Q.E.D. | Formal proof and diagrams |
+| H | Glossary & Index | Notation and reference diagrams |
+| I | Coq Encoding | Constructive formalization |
+| J | BSD Constants | Regulator, Tamagawa, and Sha collapse |
+| K | Failure Modes | Collapse Failure Typology |
 
 ---
 
 ## ✅ Status Summary (v3.0)
 
-Collapse BSD v3.0 includes:
-
-- Full structural proof of BSD under AK-HDPST v12.5  
-- Spectral/Ext-collapse ladder and energy functional  
-- ZFC-consistent and Coq-executable formulation  
-- Complete classification of Collapse Failure Types  
-- Collapse-compatible decoding of all terms in BSD identity
+- Full structural proof under AK-HDPST v12.5  
+- ZFC-consistent and Coq/Lean-verifiable  
+- Complete treatment of regulator/Tamagawa/Sha  
+- Collapse Failure Lattice established (Type I–III)
 
 ---
 
-## 🧠 Collapse Obstruction Lattice (v3.0 Highlight)
+## 🧠 Collapse Obstruction Types
 
-BSD holds **if and only if** no Collapse Failure occurs. These are structurally classified as:
+| Type | Condition | Meaning |
+|------|-----------|---------|
+| I | $\mathrm{PH}_1 \neq 0$ | Topological failure |
+| II | $\mathrm{Ext}^1 \neq 0$ | Global descent obstruction |
+| III | $\exp(-\mathcal{E}_{\text{Collapse}}) \neq \text{BSD residue}$ | Analytic misalignment |
 
-- Type I: \( \mathrm{PH}_1 \neq 0 \) (Topological failure)  
-- Type II: \( \mathrm{Ext}^1 \neq 0 \) (Cohomological obstruction)  
-- Type III: \( \text{Zeta Residue} \neq \text{Collapse Invariant} \)
-
-See Appendix K for details.
+See Appendix K for precise classification.
 
 ---
 
 ## 🔭 Future Extensions
 
-- Riemann Hypothesis: motivic and spectral collapse  
-- ABC Conjecture: Ext-chain filtration and height collapse  
-- Langlands Program: spectral stack descent and Langlands Collapse  
-- Mirror Symmetry: tropical collapse correspondence  
+- Riemann Hypothesis: spectral/motivic collapse  
+- ABC Conjecture: height-collapse via Ext chain  
+- Langlands Collapse: stack descent framework  
+- Mirror/Tropical Collapse: motivic-functorial model
 
 ---
 
-## 🧬 Theory Backbone: AK-HDPST v12.5
+## 🧬 Related: AK High-Dimensional Projection
 
-This BSD proof relies on the categorical foundation of:
+Built upon:
 
-**AK High-Dimensional Projection Structural Theory (v12.5)**
-
-> 📂 [AK-HDPST GitHub Repository](https://github.com/Kobayashi2501/AK-High-Dimensional-Projection-Structural-Theory)
-
-AK-HDPST provides:
-
-- Collapse functor pipelines  
-- Persistent barcode towers  
-- Spectral extension formalism  
-- ZFC-compatible type encoding
+**AK High-Dimensional Projection Structural Theory v12.5**  
+→ [AK-HDPST GitHub](https://github.com/Kobayashi2501/AK-High-Dimensional-Projection-Structural-Theory)
 
 ---
 
 ## 📩 Contact
 
-Contributions and collaborations welcome in:
+We welcome collaboration from experts in:
 
-- Number theory, algebraic geometry  
-- Type theory and formal verification  
-- Topological data analysis  
+- Algebraic geometry / Number theory  
+- Type theory / Coq / Lean  
+- Persistent homology / Topological data
 
 📧 dollops2501@icloud.com
 
@@ -149,7 +126,7 @@ Contributions and collaborations welcome in:
 
 ## 🌐 Japanese Version
 
-👉 [日本語版はこちら（README_ja.md）](https://github.com/Kobayashi2501/Structural-Proof-of-the-BSD-Conjecture-via-AK-Theory/blob/main/README_jp.md)
+👉 [日本語版はこちら](https://github.com/Kobayashi2501/Structural-Proof-of-the-BSD-Conjecture-via-AK-Theory/blob/main/README_jp.md)
 
 ---
 
@@ -161,4 +138,4 @@ Contributions and collaborations welcome in:
 
 ## 📌 DOI (Zenodo)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15713893.svg)](http)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15713893.svg)](https://doi.org/10.5281/zenodo.15713893)
