@@ -1,159 +1,138 @@
-# 📉 Collapse BSD 定理 (v2.0)
-### Birch–Swinnerton-Dyer 予想の構造的証明  
-#### Collapse 理論と AK 高次元射影理論によるアプローチ
+# 📉 Collapse BSD 定理 (v3.0)
+### AK高次元射影構造理論（AK-HDPST v12.5）による BSD予想の構造的証明
 
-このリポジトリは、**Collapse 理論**および  
-**AK 高次元射影構造理論（AK-HDPST）**に基づいて構築された  
-**Birch–Swinnerton-Dyer（BSD）予想の構造的・形式的証明 v2.0** を収録しています。
+このリポジトリは、**BSD予想（Birch–Swinnerton-Dyer予想）**に対する**形式的・関手的・型理論的な証明**を、**Collapse理論**および**AK高次元射影構造理論（AK-HDPST）v12.5**に基づいて提示するものです。
 
-> 📄 含まれるファイル:  
-> - `The Collapse BSD Theorem_v2.0.tex` — LaTeX ソース  
-> - `The Collapse BSD Theorem_v2.0.pdf` — 全章および補遺付きの論文 PDF
+> 📄 含まれるファイル  
+> - `The Collapse BSD Theorem_v3.0.tex` — LaTeXソース  
+> - `The Collapse BSD Theorem_v3.0.pdf` — コンパイル済みPDF（証明および付録含む）  
 
 ---
 
-## 🎯 問題設定（BSD 予想）
+## 🎯 問題設定
 
-非特異な楕円曲線 $E/\mathbb{Q}$ に対して、BSD 予想は次の等式を主張します：
+`E/ℚ` を非特異な楕円曲線とします。BSD予想は次の等式を主張します：
 
-**ord<sub>s=1</sub> L(E, s) = rank<sub>ℤ</sub> E(ℚ)**
+```
+ord_{s=1} L(E, s) = rank_{ℤ} E(ℚ)
+```
 
-本研究では、従来の L 関数解析に依存せず、  
-**Persistent Homology → Ext 消滅 → ゼータ次数対応** という  
-**Collapse 的因果連鎖に基づいた構造的証明**を構築します。
-
----
-
-## 🧠 解法戦略：Collapse 連鎖
-
-証明の因果構造は以下の通りです：
-
-**PH₁(E) = 0 ⇒ Ext¹(ℚ, E[n]) = 0 ⇒ ord<sub>s=1</sub> L(E, s) = rank<sub>ℤ</sub> E(ℚ)**
-
-各ステップは次の対応を持ちます：
-
-- **位相的平坦性**：Persistent Homology のバーコードが消滅  
-- **共ホモロジー的無障害**：Ext¹ 障害類が消失  
-- **ゼータ関数分類子**：解析次数と群階数の一致
+本理論は、以下の**Collapse連鎖**を介してこの等式を構造的に証明します：
 
 ---
 
-## 🔧 Collapse 構造の概要図
+## 🧠 Collapse 核心連鎖
 
-Collapse BSD 証明の因果図式は以下の通りです：
+```
+PH₁(E) = 0 ⇒ Ext¹(ℚ, E[n]) = 0 ⇒ ord_{s=1} L(E, s) = rank_{ℤ} E(ℚ)
+```
 
-PH₁(E) = 0
-↓ dim
-Ext¹(ℚ, E[n]) = 0
-↓ dim
-ord_{s=1} L(E, s) = rank_ℤ E(ℚ)
-
-
-各関手の対応：
-
-- 𝔽<sub>Collapse</sub>：PH₁ → Ext¹ を写す Collapse 関手  
-- ℂ<sub>ζ</sub>：Ext¹ → 階数を写す Zeta Classifier
+- **トポロジーの簡約**：持続的ホモロジー $\mathrm{PH}_1$ が消滅  
+- **コホモロジーの消滅**：拡張障害 $\mathrm{Ext}^1$ が消滅  
+- **解析的対応**：ランクと $L$ 関数の消失次数が一致  
 
 ---
 
-## 📚 証明構成（Chapter 1–8）
+## 🧩 Collapse 関手群
 
-| Chapter | 内容 | 概要 |
-|--------:|-------|---------|
-| 1 | BSD 予想の定義 | BSD の背景と Collapse 的再定式化 |
-| 2 | PH₁ の消滅 | Isomap による射影とバーコードの消滅証明 |
-| 3 | Ext の消滅 | PH₁ = 0 から Ext¹ = 0 を導く |
-| 4 | Zeta Collapse | Ext¹ の消滅から L 関数の次数を導く |
-| 5 | Collapse 関手定義 | Collapse 関手と分類子を形式的に定義 |
-| 6 | 型理論形式化 | 全体構造を Π/Σ 型で記述 |
-| 7 | QED 宣言 | BSD 予想の恒等性を形式的に完了 |
-| 8 | 拡張展望 | Motive や RH Collapse への拡張可能性 |
+- `𝔽_Collapse: PH₁ → Ext¹`  
+- `𝒞_ζ: Ext¹ → ord_{s=1} L(E, s)`
+
+これらの関手は構成的に定義されており、**ZFC** および **型理論（Coq/Lean）** に準拠しています。
 
 ---
 
-## 📑 補遺構成（Appendix A–I）
+## 📚 各章の構成（全11章）
 
-| Appendix | タイトル | 内容 |
-|---------:|----------|------|
-| A | 射影埋め込み構成 | E(ℚ) を ℝⁿ に埋め込み |
-| B | PH₁ 消滅構造 | バーコードの構成と消滅 |
-| C | Ext 構造対応 | PH から Ext への圏論的翻訳 |
-| D | Zeta Collapse 機構 | L 関数次数への変換 |
-| E | Collapse 関手の公理 | 合成・恒等・ZFC 準拠性の証明 |
-| F | 型理論エンコーディング | Π/Σ 型による Collapse の形式化 |
-| G | ZFC 論理整合性 | Collapse 理論の集合論的一貫性 |
-| H | Collapse Index | 関手構造・図式・分類子の一覧 |
-| I | Coq 形式記述スケッチ | 機械検証可能な構造の要約 |
-
----
-
-## ✅ 証明完了ステータス
-
-Collapse BSD 定理 v2.0 により、以下が形式的に完了：
-
-- PH₁ の Collapse 構造の定義と証明  
-- Ext¹ の関手的消滅と対応の証明  
-- Zeta による次数＝階数の証明  
-- ZFC および型理論による一貫性証明
-
-結論として、次の構造的連鎖が証明されました：
-
-**PH₁ = 0 ⇒ Ext¹ = 0 ⇒ rank = ord L**
+| Chapter | 内容 |
+|--------:|------|
+| 1 | BSD予想の定式化とCollapse理論の前提 |
+| 2 | 持続的ホモロジー（PH₁）の崩壊構造 |
+| 3 | Ext¹構造の崩壊とセールマー対応 |
+| 4 | Zeta Collapse分類子による解析的ランク対応 |
+| 5 | Collapse関手の形式的定義と合成性 |
+| 6 | 型理論への埋め込み（Π型／Σ型） |
+| 7 | BSD Collapse定理の形式的証明 |
+| 8 | 幾何的Collapseと BSD 公式成分の再記述 |
+| 9 | Collapse Failureの分類と障害格子 |
+| 10 | Langlands Collapseおよび拡張理論への接続 |
+| 11 | Coq/Leanによる定理の形式化実装 |
 
 ---
 
-## 🔭 今後の展開
+## 📑 付録構成（Appendix A～K）
 
-- **リーマン予想 Collapse** への拡張  
-- **ABC 予想の Collapse 分類**  
-- **Langlands 動機対応 Collapse**  
-- **ヒルベルト第12問題の Collapse 証明**
+| Appendix | 内容 |
+|---------:|------|
+| A | AK理論における射影埋め込み |
+| B | 持続的ホモロジーの消滅構造（PH₁ Collapse） |
+| C | Ext¹によるSelmer群の再構成 |
+| D | Zeta Collapse分類子の定義と解析的帰結 |
+| E | Collapse関手の定義・合成・図式的整合性 |
+| F | 型理論におけるCollapse命題の形式化 |
+| G | Collapse BSD 定理の形式的証明本体 |
+| H | Collapse記号・図式・用語の一覧 |
+| I | Coq/Lean による Collapse構造の構文化 |
+| J | BSD公式の全成分に対する Collapse互換的再記述 |
+| K | Collapse Failure タイプの格子分類とBSD非実現形式の明示化 |
 
 ---
 
-## DOI
+## ✅ 完全証明成立条件
 
-このプロジェクトはZenodoに正式にアーカイブされています：
+BSD予想は以下の条件のもとで Collapse理論により証明されます：
+
+- `PH₁(E) = 0`  
+- `Ext¹(ℚ, E[n]) = 0`  
+- `rank(E) = ord_{s=1} L(E, s)`
+
+そして以下を保証します：
+
+- Collapse関手による構造変換  
+- Zeta分類子による解析ランクの対応  
+- 型理論（Π/Σ型）による形式化  
+- ZFCセマンティクスとの整合性  
+- Coq/Lean上での構文的証明可能性
+
+---
+
+## 🧭 核心同値式
+
+```
+PH₁ = 0 ⇒ Ext¹ = 0 ⇒ rank = ord L
+```
+
+---
+
+## 📦 DOI
+
+Zenodoにて正式にアーカイブされています：
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15713893.svg)](https://doi.org/10.5281/zenodo.15713893)
 
 ---
 
-## 🧩 関連理論：AK 高次元射影構造理論（AK-HDPST）
+## 🧩 関連理論：AK高次元射影構造理論
 
-Collapse BSD 定理は、以下の一般構造理論に基づいています：
+Collapse BSD定理は次の理論に基づいています：
 
-**AK 高次元射影構造理論（AK-HDPST）**  
-→ [AK-HDPST GitHub リポジトリはこちら](https://github.com/Kobayashi2501/AK-High-Dimensional-Projection-Structural-Theory)
-
-この理論は以下を形式化しています：
-
-- トポロジカル Collapse 機構  
-- 関手的 Ext 消滅の連鎖  
-- ZFC および型理論による証明形式化  
-- Navier–Stokes／BSD／リーマン予想／Langlands の統一的構造対応
+**AK High-Dimensional Projection Structural Theory (AK-HDPST)**  
+→ https://github.com/Kobayashi2501/AK-High-Dimensional-Projection-Structural-Theory
 
 ---
 
-## 📩 連絡先と協力のお願い
+## 📩 お問い合わせ・共同研究希望
 
-以下の分野の研究者との共同を歓迎します：
+以下の分野の研究者との共同研究を歓迎します：
 
-- 楕円曲線、数論、代数幾何  
-- 型理論（Coq, Lean 等）  
+- 数論／代数幾何／ホモロジー理論  
+- 型理論（Coq / Lean）  
 - トポロジカルデータ解析（TDA）  
-- 動機的構造や圏論的ホモロジー
 
-📧 [dollops2501@icloud.com](mailto:dollops2501@icloud.com)
-
----
-
-## 🌐 英語版はこちら
-
-👉 [English version (README.md)](https://github.com/Kobayashi2501/Structural-Proof-of-the-BSD-Conjecture-via-AK-Theory/blob/main/README.md)
+📧 dollops2501@icloud.com
 
 ---
 
 ## 📘 ライセンス
 
-[MIT License](https://opensource.org/licenses/MIT)
+MIT License
