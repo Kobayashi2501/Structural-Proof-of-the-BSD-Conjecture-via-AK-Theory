@@ -42,7 +42,6 @@ $$
 
 Each functor is defined constructively and is provably consistent with ZFC and dependent type theory.
 
-
 ---
 
 ## 📚 Proof Outline (Chapters 1–8)
