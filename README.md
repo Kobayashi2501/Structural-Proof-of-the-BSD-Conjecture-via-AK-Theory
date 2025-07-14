@@ -11,7 +11,6 @@ This repository presents **Version 3.0** of a fully formal, functorial, and type
 ---
 
 ## 🎯 Problem Statement
-
 Let $E/\mathbb{Q}$ be a non-singular elliptic curve.  
 The BSD Conjecture states:
 
@@ -41,6 +40,7 @@ $$
 - $\mathcal{C}_\zeta: \mathrm{Ext}^1 \rightarrow \operatorname{ord}_{s=1} L(E, s)$
 
 Each functor is defined constructively and is provably consistent with ZFC and dependent type theory.
+```
 
 ---
 
