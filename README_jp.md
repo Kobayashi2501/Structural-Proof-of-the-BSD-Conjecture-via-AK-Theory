@@ -115,7 +115,7 @@ Collapse Failureが存在する場合は `rank > 0` となり、これはμ-inva
 
 ## 📦 DOI
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15876651.svg)](https://doi.org/10.5281/zenodo.15876651)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16676582.svg)](https://doi.org/10.5281/zenodo.16676582)
 
 ---
 
